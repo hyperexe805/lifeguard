@@ -1,21 +1,74 @@
+/* styles.css */
+
+/* Importamos las capas de Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Fuente base del proyecto */
+body {
+  font-family: Helvetica, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+/* Variables globales de colores */
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Modo claro */
+    --background: 210 20% 98%; /* Fondo principal claro */
+    --foreground: 220 15% 35%; /* Texto principal claro */
+    --card: 0 0% 100%; /* Fondo blanco puro para tarjetas */
+    --card-foreground: 220 15% 20%; /* Texto en tarjetas */
+    --popover: 0 0% 100%; /* Fondo de popovers */
+    --popover-foreground: 220 15% 35%;
+    --primary: 180 30% 50%; /* Azul principal */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 45 10% 90%; /* Elementos secundarios */
+    --secondary-foreground: 220 15% 25%;
+    --muted: 210 20% 95%; /* Fondos menos destacados */
+    --muted-foreground: 220 15% 40%;
+    --accent: 150 25% 60%; /* Verde pastel */
+    --accent-foreground: 220 15% 10%;
+    --destructive: 0 80% 50%; /* Rojo intenso */
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 10% 85%; /* Bordes claros */
+    --input: 220 10% 85%; /* Campos de entrada */
+    --ring: 220 30% 60%; /* Anillo de foco */
+    --radius: 0.5rem; /* Borde redondeado universal */
+  }
+
+  /* Variables para modo oscuro */
+  .dark {
+    --background: 220 15% 20%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 15%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 15%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 220 10% 20%;
+    --secondary: 210 10% 30%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 15% 10%;
+    --muted-foreground: 240 10% 60%;
+    --accent: 160 15% 45%;
+    --accent-foreground: 220 10% 15%;
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5% 25%;
+    --input: 240 5% 25%;
+    --ring: 220 15% 70%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Aplicamos clases globales */
+@layer base {
+  /* Estilo global para todos los elementos */
+  * {
+    @apply border-border;
+  }
+
+  /* Fondo y texto predeterminado del body */
+  body {
+    @apply bg-background text-foreground;
+  }
 }
