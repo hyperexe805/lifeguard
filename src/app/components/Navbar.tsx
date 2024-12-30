@@ -3,12 +3,11 @@
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Menu, Moon, Sun } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { DialogTitle } from "@radix-ui/react-dialog";  // Import DialogTitle
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden"; // Import VisuallyHidden
 import { motion } from "framer-motion";
-import { usePathname } from "next/navigation";
 import ThemeButton from "./ThemeButton";
 
 const sections = [
@@ -22,12 +21,7 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("inicio");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [theme, setTheme] = useState(false);
-  const pathname = usePathname(); // Get the current pathname
-  const toggleTheme = () => {
-    setTheme(!theme);
-    document.body.classList.toggle('.dark', !theme); // Alterna la clase 'dark' en el body
-  };
+
   useEffect(() => {
     const observers = sections.map(({ id }) => {
       const observer = new IntersectionObserver(

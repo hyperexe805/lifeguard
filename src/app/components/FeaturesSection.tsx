@@ -1,6 +1,5 @@
 "use client"
 
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Shield, Users, Zap, Clock } from 'lucide-react'
